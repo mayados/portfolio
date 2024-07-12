@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container-session-page{
+    background-image: url('../img/lisbon_wallpaper.jpg');
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-position: center;
+    z-index: 1;
+}
+
+#container-session-page::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: -1;
+}
+
+#session-user figure{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 50;
+}
+
+#session-user figure img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
