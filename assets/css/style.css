@@ -26,7 +26,6 @@
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: -1;
 }
 
@@ -46,6 +45,16 @@
     padding: 10px;
     border-radius: 5%;
     text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.453);
+}
+
+#session-user div a:visited{
+    color: black;
+}
+
+#session-user div a:hover{
+    background-color: rgb(21, 21, 21);
+    color: white;
 }
 
 #session-user figure{
@@ -63,7 +72,7 @@
 }
 
 #widgets-below{
-    padding: 0rem 2rem 0rem 2rem;
+    padding: 0rem 2rem 1rem 2rem;
     height: 25vh;
     display: flex;
     align-items: flex-end;
@@ -77,22 +86,37 @@
     gap: 1rem;
 }
 
-#widgets-below #users-accounts article:first-of-type{
-    margin-bottom: 1rem;
-}
-
 #widgets-below #users-accounts figure{
     height: 50px;
     width: 50px;
     border: 3px solid gray;
     border-radius: 50%;
-    padding: 5px;
+    overflow: hidden;
+}
+
+#widgets-below #users-accounts article{
+    padding: 10px;
+}
+
+#widgets-below #users-accounts article:first-of-type,
+#widgets-below #users-accounts article:hover,
+#computer-actions i:hover{
+    background-color: rgba(114, 114, 114, 0.44);
 }
 
 #widgets-below #users-accounts figure img{
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+#computer-actions{
+    display: flex;
+    gap: 1rem;
+}
+
+#computer-actions i{
+    padding: 5px;
 }
 
 
@@ -105,6 +129,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    padding-top: 3vh;
 }
 
 .desk-widgets{
@@ -113,6 +138,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    margin-left: 4vw;
+    margin-top: 3vh;
 }
 
 .desk-widgets:hover{
@@ -125,32 +153,53 @@
 }
 
 #folder-icon{
-    height: 40px;
+    height: 45px;
     padding: 5px;
 }
 
 #pdf-icon{
-    height: 50px;
+    height: 60px;
 }
 
-#bottom-menu-bar{
-    background-color: gray;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    display: flex;
-    height: 6vh;
-}
 
 
                                 /******** PORTFOLIO FOLDER **********/
 
 #portfolio{
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.453);
     background-color: rgb(21, 21, 21);
     width: 60vw;
     height: 500px;
     overflow: hidden;
+    position: absolute;
+    border-radius: 5px;
+    bottom: 20vh;
+    left: 50vh;
+    /* display: none; */
+}
+
+#action-window{
+    color: white;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    display: flex;
+    /* gap: 2rem; */
+    align-items: center;
+    height: 25px;
+}
+
+#action-window i{
+    padding: 10px 20px;
+}
+
+#action-window i:first-of-type:hover,
+#action-window i:nth-of-type(2):hover{
+    background-color: rgb(65, 65, 65);
+}
+
+#close-window:hover{
+    background-color: rgb(232, 51, 51);
 }
 
 #tab{
@@ -163,6 +212,12 @@
     width: 30%;
     margin: 10px 0px 0px 10px;
     border-radius: 10px 10px 0px 0px;
+    position: relative;
+}
+
+#tab i:nth-of-type(2){
+    position: absolute;
+    right: -2rem;
 }
 
 #tab #folder{
@@ -255,6 +310,9 @@
 #intern-menu #new-list div{
     border: 1px solid white;
     border-radius: 50%;
+    height: 1.2rem;
+    width: 1.2rem;
+    text-align: center;
 }
 
 #intern-menu #new-list{
@@ -296,17 +354,51 @@
 
 }
 
+.blue-color{
+    color: rgb(104, 174, 190);
+}
+
+.purple-color{
+    color: rgb(126, 84, 148);
+}
+
+.pink-color{
+    color: rgb(215, 144, 156);
+}
+
+.yellow-color{
+    color: yellow;
+}
+
+.green-color{
+    color: rgb(114, 148, 114);
+}
+
+.orange-color{
+    color: rgb(255, 132, 0);
+}
+
 #scrollable-menu{
+    flex: 2;
+}
+
+#scrollable-menu ul li{
+    padding: 10px;
+}
+
+#scrollable-menu ul li:hover,
+#table-file tbody tr:hover{
+    background-color: rgba(95, 94, 94, 0.49);
+}
+
+.scrollable{
     overflow-y: scroll;
 }
 
 #table-file{
-    width: 75%;
-    margin-top: 10px;}
-
-#table-file thead tr{
-    display: flex;
-    justify-content: space-evenly;
+    width: 90%;
+    margin-top: 10px;
+    height: 100%;
 }
 
 #table-file thead tr td{
@@ -314,16 +406,266 @@
     padding-left: 10px;
 }
 
-#table-file thead tr #name{
-    flex: 3;
+#table-file tbody tr td{
+    padding: 5px 0 5px 10px;
+}
+
+#table-file td,
+#table-file th{
+    padding-left: 10px;
+}
+
+#scrollable-table{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 7;
+}
+
+#scrollable-table a{
+    text-decoration: none;
+    color: white;
+}
+
+#scrollable-table a:visited{
+    color: white;
+}
+
+
+                                /****** BOTTOM MENU BAR ********/
+
+#bottom-menu-bar{
+    background-color: rgb(27, 25, 25);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    height: 6vh;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+#desk-bottom-menu,
+#bottom-menu-bar #center-widgets{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#bottom-menu-bar #center-widgets input{
+    height: 4vh;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    border: none;
+    border-radius: 50px;
+}
+
+#bottom-menu-bar #center-widgets input::placeholder{
+    color: rgb(224, 221, 221);
     padding-left: 30px;
 }
 
-#table-file thead tr #modified,
-#table-file thead tr #type{
-    flex: 2;
+#bottom-menu-bar #center-widgets i{
+    font-size: 1.7rem;
 }
 
-#table-file thead tr #size{
-    flex: 1;
+#bottom-menu-bar #center-widgets #search{
+    position: relative;
+}
+
+#bottom-menu-bar #center-widgets #search i{
+    position: absolute;
+    font-size: 1rem;
+    top: 5px;
+    left: 10px;
+}
+
+#bottom-menu-bar span:first-of-type,
+#bottom-menu-bar i,
+#bottom-menu-bar li,
+#bottom-menu-bar #date-hour{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#bottom-menu-bar span:first-of-type:hover,
+#bottom-menu-bar i:hover,
+#bottom-menu-bar li:hover,
+#bottom-menu-bar #date-hour:hover{
+    background-color: gray;
+}
+
+#date-hour{
+    text-align: end;
+}
+
+
+                            /********  CV PAGE **********/
+
+embed{
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+/***** RESPONSIVE *******/
+
+/* Petits écrans */
+@media (min-width: 700px) and (max-width: 1024px) {
+    #portfolio{
+        width: 80vw;
+        left: 20vh;
+    }
+}
+
+/* Ecrans moyens */
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+}
+
+/* Grands écrans bureau */
+@media (min-width: 1367px) and (max-width: 1500px) {
+    #portfolio{
+        width: 80vw;
+        left: 20vh;
+    }
+
+    li,
+    p,
+    td,
+    ::placeholder,
+    i{
+        font-size: 1.2rem;
+    }
+
+    #bottom-menu-bar{
+        height: 8vh;
+    }
+
+    #bottom-menu-bar #center-widgets input{
+        height: 6vh;
+        width: 20vw;
+    }
+
+    #bottom-menu-bar #center-widgets #search i{
+        top: 1.5vh;
+        left: 10px;
+    }
+
+    #bottom-menu-bar #center-widgets i{
+        font-size: 2.2rem;
+    }
+}
+
+@media (min-width: 1501px) and (max-width: 1920px) {
+    #portfolio{
+        width: 80vw;
+        left: 20vh;
+        height: 600px;
+    }
+
+    li,
+    p,
+    td,
+    ::placeholder,
+    i{
+        font-size: 1.7rem;
+    }
+
+    #bottom-menu-bar{
+        height: 8vh;
+    }
+
+    #bottom-menu-bar #center-widgets input{
+        height: 6vh;
+        width: 20vw;
+    }
+
+    #bottom-menu-bar #center-widgets #search i{
+        top: 2vh;
+        left: 10px;
+    }
+
+    #bottom-menu-bar #center-widgets i{
+        font-size: 2.7rem;
+    }
+
+    #window-main-content{
+        height: 450px;
+        padding-bottom: 2rem;
+    }
+
+    #tab-sub-menu{
+        height: 60px;
+    }
+
+    #portfolio-searchbar{
+        padding: 5px 0 0 0;
+    }
+
+    #portfolio-searchbar input{
+        padding: 8px;
+    }
+
+    #portfolio-searchbar ::placeholder{
+        font-size: 1.5rem;
+    }
+    
+    #portfolio-searchbar  i{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+
+    #table-file tbody tr td{
+        padding: 10px 0 10px 10px;
+    }
+
+    #tab-sub-menu{
+        height: 60px;
+    }
+
+    #intern-menu #new-list div{
+        height: 1.7rem;
+        width: 1.7rem;
+    }
+
+    #bottom-menu-bar #center-widgets input{
+        height: 5vh;
+        padding-top: 1vh;
+    }
+
+    #bottom-menu-bar #center-widgets input::placeholder{
+        padding-left: 40px;
+    }
+    
+    #bottom-menu-bar #center-widgets i{
+        font-size: 2.7rem;
+    }
+    
+    #bottom-menu-bar #center-widgets #search i{
+        font-size: 1.3rem;
+        top: 1.5vh;
+        left: 10px;
+    }
+
+    #folder-icon{
+        height: 65px;
+        padding: 5px;
+    }
+    
+    #pdf-icon{
+        height: 90px;
+    }
+}
+
+/* Très grands écrans */
+@media (min-width: 1921px) {
+
 }
