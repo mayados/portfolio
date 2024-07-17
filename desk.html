@@ -9,25 +9,25 @@
 </head>
 <body>
     <div id="container-desk-page">
-        <div class="desk-widgets">
+        <div class="desk-widgets" id="portfolio-folder">
             <img id="folder-icon" src="assets/img/icones/folder_icon.png" alt="">
             <p>Portfolio</p>
         </div>
-        <div class="desk-widgets">
+        <div class="desk-widgets" id="cv-file">
             <img id="pdf-icon" src="assets/img/icones/pdf_icon.png" alt="">
             <p>CV</p>
         </div>
-
-        <!-- un dossier avec portfolio  --> 
-        <!--un document pdf avec le cv   -->
-        <!-- Une page LinkedIn en cliquant sur une icone  -->
-        <!-- Une page Github  -->
-        <!-- Une page avec le parcours ?  -->
-        <section id="portfolio">
+        <section id="portfolio" class="undisplayed">
+            <div id="action-window">
+                <i class="fa-solid fa-minus"></i>
+                <i class="fa-solid fa-expand"></i>
+                <i class="fa-solid fa-xmark" id="close-window"></i>
+            </div>
            <!--  <i class="fa-regular fa-file-image"></i> --> 
            <div id="tab">
                 <p><i class="fa-solid fa-folder" id="folder"></i> Portfolio</p>
                 <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-plus"></i>
            </div>
            <div id="tab-sub-menu">
                 <ul>
@@ -49,7 +49,7 @@
            <section>
                 <div id="intern-menu">
                     <ul id="new-list">
-                        <div><i class="fa-solid fa-plus"></i></div>
+                        <div><i class="fa-solid fa-plus blue-color"></i></div>
                         <p>Nouveau</p>
                     </ul>
                     <ul class="bar-left" id="icon-list">
@@ -87,61 +87,154 @@
                     </ul>
                 </div>
                 <div id="window-main-content">
-                    <div id="scrollable-menu">
+                    <div class="scrollable" id="scrollable-menu">
                         <ul>
-                            <li>Accueil</li>
-                            <li>Galerie</li>
-                            <li>Marianne : perso</li>
-                        </ul>
-                        <ul>
-                            <li><i class="fa-solid fa-laptop"></i> Bureau</li>
-                            <li><i class="fa-solid fa-download"></i> Téléchargements</li>
+                            <li><i class="fa-solid fa-laptop blue-color"></i> Bureau</li>
+                            <li><i class="fa-solid fa-download green-color"></i> Téléchargements</li>
                             <li><i class="fa-regular fa-file"></i> Documents</li>
-                            <li><i class="fa-regular fa-image"></i> Images</li>
-                            <li><i class="fa-solid fa-music"></i> Musique</li>
-                            <li><i class="fa-solid fa-circle-play"></i> Vidéos</li>
-                            <li><i class="fa-brands fa-php"></i> PHP</li>
+                            <li><i class="fa-brands fa-php purple-color"></i> PHP</li>
                             <li><i class="fa-brands fa-symfony"></i> Symfony</li>
-                            <li><i class="fa-solid fa-database"></i> SQL</li>
-                            <li><i class="fa-solid fa-code"></i> C#</li>
-                            <li><i class="fa-brands fa-react"></i> React</li>
-                            <li><i class="fa-brands fa-sass"></i> Sass</li>
-                            <li><i class="fa-brands fa-js"></i> JavaScript</li>
-                            <li><i class="fa-brands fa-html5"></i> Html</li>
-                            <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-                            <li> <i class="fa-solid fa-desktop"></i> Ce PC</li>
-                            <li><i class="fa-solid fa-network-wired"></i> Réseau</li>
+                            <li><i class="fa-solid fa-database purple-color"></i> SQL</li>
+                            <li><i class="fa-solid fa-code purple-color"></i> C#</li>
+                            <li><i class="fa-brands fa-react blue-color"></i> React</li>
+                            <li><i class="fa-brands fa-sass pink-color"></i> Sass</li>
+                            <li><i class="fa-brands fa-js yellow-color"></i> JavaScript</li>
+                            <li><i class="fa-brands fa-html5 orange-color"></i> Html</li>
+                            <li><i class="fa-brands fa-css3-alt blue-color"></i> CSS</li>
+                            <li> <i class="fa-solid fa-desktop blue-color"></i> Ce PC</li>
+                            <li><i class="fa-solid fa-network-wired blue-color"></i> Réseau</li>
                             <li><i class="fa-brands fa-linux"></i> Linux</li>
                         </ul>
                     </div>
-        
-                    <table id="table-file">
-                        <thead>
-                            <tr>
-                                <td id="name">Nom</td>
-                                <td id="modified">Modifié le</td>
-                                <td id="type">Type</td>
-                                <td id="size">Taille</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>MonProjet</td>
-                                <td>15/07/2024</td>
-                                <td>Github</td>
-                                <td>7 595 Ko</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="scrollable" id="scrollable-table">
+                        <table id="table-file" >
+                            <thead>
+                                <tr>
+                                    <td class="name">Nom</td>
+                                    <td class="modified">Modifié le</td>
+                                    <td class="type">Type</td>
+                                    <td class="size">Taille</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/react_product_list" target="_blank"><i class="fa-brands fa-github"></i> Product list</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/UHDP" target="_blank"><i class="fa-brands fa-github"></i> UHDP</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/Number-split---Odd-and-Even" target="_blank"><i class="fa-brands fa-github"></i> Number split - Odd and even</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/Fizz-Buzz-Game" target="_blank"><i class="fa-brands fa-github"></i> Fizz Buzz game</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/Times-table" target="_blank"><i class="fa-brands fa-github"></i> Time tables</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/Odd-and-even-checker" target="_blank" ><i class="fa-brands fa-github"></i> Odd and even checker</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/do4u" target="_blank"><i class="fa-brands fa-github"></i> Do4u</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/api_pokemon_exo" target="_blank"><i class="fa-brands fa-github"></i> Pokemons - API</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/ProjetSessionsSymf" target="_blank"><i class="fa-brands fa-github"></i> Sessions</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/forum" target="_blank"><i class="fa-brands fa-github"></i> Forum</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/Christmas-page" target="_blank"><i class="fa-brands fa-github"></i> Christmas page</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/cinema_mvc" target="_blank"><i class="fa-brands fa-github"></i> Cinema</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/Landing-page" target="_blank"><i class="fa-brands fa-github"></i> Landing page</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                                <tr>
+                                    <td class="name"><a href="https://github.com/mayados/Le_quai_des_machines" target="_blank"><i class="fa-brands fa-github"></i> Le quai des machines</a></td>
+                                    <td class="modified">15/07/2024</td>
+                                    <td class="type">Github</td>
+                                    <td class="type">7 595 Ko</td>
+                                </tr>
+                            </tbody>
+                        </table>                        
+                    </div>
+
                 </div>
            </section>
         </section>
         <section id="bottom-menu-bar">
-            <input type="text">
-            <p>21:27</p>
-            <p>13/07/2024</p>
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <span>
+                <p><i class="fa-solid fa-moon"></i> 21°C</p>                
+            </span>
+            <div id="center-widgets">
+                <i class="fa-brands fa-windows blue-color"></i>
+                <span id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Rechercher">                    
+                </span>
+
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin blue-color"></i></a>                
+            </div>
+            <ul id="desk-bottom-menu">
+                <li><i class="fa-solid fa-arrows-rotate"></i></li>
+                <li><i class="fa-solid fa-wifi"></i></li>
+                <li><i class="fa-solid fa-volume-low"></i></li>
+                <li><i class="fa-solid fa-battery-three-quarters"></i></li>
+                <div id="date-hour">
+                    <p id="hour"></p>
+                    <p id="date"></p>                
+                </div>                
+            </ul>
+
         </section>
     </div>
 </body>
+<script src="assets/js/script.js"></script>
+
 </html>
