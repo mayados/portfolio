@@ -32,7 +32,7 @@ function displayCurrentDate(){
         return n<10 ? '0'+n : n
     }
     const dateString = addZeroInFrontOfNumber(currentDayOfMonth) + "/" + addZeroInFrontOfNumber(currentMonth + 1) + "/" + currentYear;
-    const hour = currentDate.getHours() +":"+ currentDate.getMinutes();
+    const hour = currentDate.getHours() +":"+ addZeroInFrontOfNumber(currentDate.getMinutes());
       
     dateSpace.innerHTML = dateString
     hourSpace.innerHTML = hour
