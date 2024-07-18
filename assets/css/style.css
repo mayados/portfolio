@@ -493,8 +493,9 @@
     border-radius: 5px;
 }
 
-#bottom-menu-bar span:first-of-type:hover,
-#bottom-menu-bar i:hover,
+#bottom-menu-bar #weather:hover,
+#bottom-menu-bar #center-widgets .fa-windows:hover,
+#bottom-menu-bar #center-widgets a:hover,
 #bottom-menu-bar li:hover,
 #bottom-menu-bar #date-hour:hover{
     background-color: gray;
@@ -525,48 +526,56 @@ embed{
 }
 
 /* Ecrans moyens */
-@media (min-width: 1024px) and (max-width: 1366px) {
-
-}
-
-/* Grands écrans bureau */
-@media (min-width: 1367px) and (max-width: 1500px) {
+@media (min-width: 1024px) {
     #portfolio{
         width: 80vw;
         left: 20vh;
     }
+}
+
+/* Grands écrans bureau */
+@media (min-width: 1367px)  {
 
     li,
     p,
     td,
     ::placeholder,
     i{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     #bottom-menu-bar{
-        height: 8vh;
+        height: 7vh;
     }
 
     #bottom-menu-bar #center-widgets input{
-        height: 6vh;
+        height: 5vh;
         width: 20vw;
+        padding-top: 0.3rem;
     }
 
     #bottom-menu-bar #center-widgets #search i{
         top: 1.5vh;
         left: 10px;
+        font-size: 0.9rem;
     }
 
     #bottom-menu-bar #center-widgets i{
         font-size: 2.2rem;
     }
+
+    #portfolio-searchbar{
+        padding: 5px 0 0 0;
+    }
+
+    #portfolio-searchbar input{
+        padding: 5px;
+        border-radius: 5px;
+    }
 }
 
-@media (min-width: 1501px) and (max-width: 1920px) {
+@media  (min-width: 1920px) {
     #portfolio{
-        width: 80vw;
-        left: 20vh;
         height: 600px;
     }
 
@@ -603,10 +612,6 @@ embed{
 
     #tab-sub-menu{
         height: 60px;
-    }
-
-    #portfolio-searchbar{
-        padding: 5px 0 0 0;
     }
 
     #portfolio-searchbar input{
@@ -655,17 +660,20 @@ embed{
         left: 10px;
     }
 
+.desk-widgets{
+    height: 120px;
+    width: 120px;
+}
+
     #folder-icon{
         height: 65px;
-        padding: 5px;
     }
     
     #pdf-icon{
         height: 90px;
     }
-}
 
-/* Très grands écrans */
-@media (min-width: 1921px) {
-
+    #action-window{
+        top: 0.7rem;
+    }
 }
