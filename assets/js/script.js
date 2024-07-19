@@ -3,11 +3,29 @@ function displayPortfolio(){
     let folder = document.querySelector("#portfolio-folder")
     let portfolio = document.querySelector("#portfolio")    
     folder.addEventListener("dblclick", (e) => {
-        portfolio.style.display = "block"
+        portfolio.style.display = "block"        
+
+        let extend = document.querySelector("#extend"); 
+        let windowContent = document.querySelector("#window-main-content");  
+    
+        extend.addEventListener("click", (e) => {
+            console.log(portfolio)   
+            portfolio.classList.toggle("extend")  
+            if(portfolio.classList == "extend"){
+                portfolio.classList.remove("mini")  
+                windowContent.classList.remove("window-main-content-mini")              
+            }else{
+                portfolio.classList.add("mini") 
+                windowContent.classList.add("window-main-content-extend")
+            }
+        }); 
+
         let closeWindow = document.querySelector("#close-window")
         closeWindow.addEventListener("click", (e) => {
             portfolio.style.display ="none"
-        });    
+        });  
+        
+ 
     });    
 }
 displayPortfolio();
@@ -40,3 +58,19 @@ function displayCurrentDate(){
 
 displayCurrentDate()
 
+// function extendWindow(previousHeight, previousWidth){
+//     let extend = document.querySelector("#extend");
+//     let portfolio = document.querySelector("#portfolio")    
+
+//     extend.addEventListener("click", (e) => {
+
+//         console.log(previousHeight)        
+//         portfolio.style.height="100vh";
+//         portfolio.style.width="100vw";
+//         portfolio.style.bottom="0px";
+//         portfolio.style.left="0px";
+
+
+//     });   
+// }
+// extendWindow();
