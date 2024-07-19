@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+:root {
+    --windows-background: ;
+    --white: ;
+    --outline: ;
+    --black-color: ;
+  }
+
+li{
+    list-style-type: none;
+}
+
                 /************  SESSION PAGE  **************/
 
 #container-session-page{
@@ -74,14 +85,17 @@
 #widgets-below{
     padding: 0rem 2rem 1rem 2rem;
     height: 25vh;
-    display: flex;
     align-items: flex-end;
     justify-content: space-between;
 }
 
+#widgets-below,
+#widgets-below #users-accounts article,
+#computer-actions{
+    display: flex;
+}
 
 #widgets-below #users-accounts article{
-    display: flex;
     align-items: center;
     gap: 1rem;
 }
@@ -111,7 +125,6 @@
 }
 
 #computer-actions{
-    display: flex;
     gap: 1rem;
 }
 
@@ -133,7 +146,7 @@
 }
 
 .desk-widgets{
-    width: 60px;
+    width: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,11 +160,6 @@
     background-color: gray;
 }
 
-#folder-icon,
-#pdf-icon{
-    width: auto;
-}
-
 #folder-icon{
     height: 45px;
     padding: 5px;
@@ -161,21 +169,29 @@
     height: 60px;
 }
 
-
-
                                 /******** PORTFOLIO FOLDER **********/
 
 #portfolio{
     border: 1px solid rgba(255, 255, 255, 0.453);
     background-color: rgb(21, 21, 21);
-    width: 60vw;
-    height: 500px;
     overflow: hidden;
     position: absolute;
     border-radius: 5px;
+    display: none;
+}
+
+.mini{
+    width: 60vw;
+    height: 500px;
     bottom: 20vh;
-    left: 50vh;
-    /* display: none; */
+    left: 50vh;        
+}
+
+.extend{
+    width: 100vw;    
+    height: 94vh;
+    bottom: 0;
+    left: 0;
 }
 
 #action-window{
@@ -184,7 +200,6 @@
     top: 5px;
     right: 0;
     display: flex;
-    /* gap: 2rem; */
     align-items: center;
     height: 25px;
 }
@@ -203,10 +218,7 @@
 }
 
 #tab{
-    background-color: rgb(47, 47, 47);
     color: whitesmoke;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 10px;
     width: 30%;
@@ -224,6 +236,7 @@
     color: rgb(243, 212, 88);
 }
 
+#tab,
 #tab-sub-menu,
 #tab-sub-menu ul,
 #tab-sub-menu #path{
@@ -307,12 +320,13 @@
     padding: 10px;
 }
 
-#intern-menu #new-list div{
+#intern-menu #new-list li:first-of-type{
     border: 1px solid white;
     border-radius: 50%;
     height: 1.2rem;
     width: 1.2rem;
     text-align: center;
+    display: inline-block;
 }
 
 #intern-menu #new-list{
@@ -347,11 +361,17 @@
     font-size: 0.5rem;
 }
 
+.window-main-content-mini{
+    height: 355px;
+}
+
+.window-main-content-extend{
+    height: 70vh;
+}
+
 #window-main-content{
     display: flex;
-    height: 355px;
     color: white;
-
 }
 
 .blue-color{
@@ -439,21 +459,23 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
-    display: flex;
     height: 6vh;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.226);
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 1.5rem;
+}
+
+#bottom-menu-bar,
+#desk-bottom-menu,
+#bottom-menu-bar #center-widgets{
+    display: flex;
+    align-items: center; 
 }
 
 #desk-bottom-menu,
 #bottom-menu-bar #center-widgets{
     list-style-type: none;
-    display: flex;
-    align-items: center;
     gap: 15px;
 }
 
@@ -513,28 +535,56 @@ embed{
     width: 100vw;
 }
 
-
-
 /***** RESPONSIVE *******/
 
-/* Petits écrans */
-@media (min-width: 700px) and (max-width: 1024px) {
-    #portfolio{
+@media (min-width: 700px) {
+
+    .mini{
         width: 80vw;
-        left: 20vh;
+        height: 500px;
+        bottom: 20vh;
+        left: 20vh;        
+    }
+    
+    .extend{
+        width: 100vw;    
+        height: 100vh;
+        bottom: 0;
+        left: 0;
+    }
+
+    .window-main-content-mini{
+        height: 355px;
+    }
+    
+    .window-main-content-extend{
+        height: 70vh;
     }
 }
 
-/* Ecrans moyens */
-@media (min-width: 1024px) {
-    #portfolio{
-        width: 80vw;
-        left: 20vh;
-    }
-}
-
-/* Grands écrans bureau */
 @media (min-width: 1367px)  {
+
+    .mini{
+        width: 60vw;
+        height: 500px;
+        bottom: 20vh;
+        left: 50vh;        
+    }
+    
+    .extend{
+        width: 100vw;    
+        height: 100vh;
+        bottom: 0;
+        left: 0;
+    }
+
+    .window-main-content-mini{
+        height: 355px;
+    }
+    
+    .window-main-content-extend{
+        height: 70vh;
+    }
 
     li,
     p,
@@ -550,7 +600,6 @@ embed{
 
     #bottom-menu-bar #center-widgets input{
         height: 5vh;
-        width: 20vw;
         padding-top: 0.3rem;
     }
 
@@ -579,6 +628,28 @@ embed{
         height: 600px;
     }
 
+    .mini{
+        width: 60vw;
+        height: 500px;
+        bottom: 20vh;
+        left: 50vh;        
+    }
+    
+    .extend{
+        width: 100vw;    
+        height: 100vh;
+        bottom: 0;
+        left: 0;
+    }
+
+    .window-main-content-mini{
+        height: 355px;
+    }
+    
+    .window-main-content-extend{
+        height: 70vh;
+    }
+
     li,
     p,
     td,
@@ -593,7 +664,6 @@ embed{
 
     #bottom-menu-bar #center-widgets input{
         height: 6vh;
-        width: 20vw;
     }
 
     #bottom-menu-bar #center-widgets #search i{
@@ -660,10 +730,10 @@ embed{
         left: 10px;
     }
 
-.desk-widgets{
-    height: 120px;
-    width: 120px;
-}
+    .desk-widgets{
+        height: 120px;
+        width: 120px;
+    }
 
     #folder-icon{
         height: 65px;
@@ -675,5 +745,19 @@ embed{
 
     #action-window{
         top: 0.7rem;
+    }
+
+    #session-user div a,
+    #compuer-actions i{
+        font-size: 1.4rem;
+    }
+
+    #widgets-below #users-accounts figure{
+        height: 100px;
+        width: 100px;
+    }
+
+    #widgets-below #users-accounts article{
+        width: 20vw;
     }
 }
