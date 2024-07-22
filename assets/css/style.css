@@ -16,11 +16,6 @@ li{
     list-style-type: none;
 }
 
-h1{
-    font-size: 1rem;
-    font-weight: normal;
-}
-
                 /************  SESSION PAGE  **************/
 
 #container-session-page{
@@ -184,6 +179,11 @@ h1{
     position: absolute;
     border-radius: 5px;
     display: none;
+}
+
+ #portfolio-folder h1{
+    font-size: 1rem;
+    font-weight: normal;
 }
 
 .mini{
@@ -660,13 +660,14 @@ embed{
 }
 
 @media  (min-width: 1920px) {
-    #portfolio{
-        height: 600px;
+
+    #portfolio-folder h1{
+        font-size: 1.7rem;
     }
 
     .mini{
-        width: 60vw;
-        height: 500px;
+        width: 65vw;
+        height: 600px;
         bottom: 20vh;
         left: 50vh;        
     }
@@ -680,7 +681,7 @@ embed{
     }
 
     .window-main-content-mini{
-        height: 355px;
+        height: 455px;
     }
     
     .window-main-content-extend{
@@ -717,7 +718,6 @@ embed{
     }
 
     #window-main-content{
-        height: 450px;
         padding-bottom: 2rem;
     }
 
@@ -747,10 +747,11 @@ embed{
         height: 60px;
     }
 
-    #intern-menu #new-list div{
-        height: 1.7rem;
-        width: 1.7rem;
+    #intern-menu #new-list li:first-of-type{
+        height: 2rem;
+        width: 2rem;
     }
+    
 
     #bottom-menu-bar #center-widgets input{
         height: 5vh;
