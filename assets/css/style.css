@@ -5,10 +5,11 @@
 }
 
 :root {
-    --windows-background: ;
-    --white: ;
-    --outline: ;
-    --black-color: ;
+    --white-color: white;
+    --outline: rgba(255, 255, 255, 0.226);
+    --black-color: black;
+    --hover-light-color: rgba(114, 114, 114, 0.44);
+    --light-input: rgb(224, 221, 221);
   }
 
 li{
@@ -57,7 +58,7 @@ h1{
 #session-user div a{
     display: inline-block;
     margin-top: 2rem;
-    border: 1px solid black;
+    border: 1px solid --black-color;
     padding: 10px;
     border-radius: 5%;
     text-decoration: none;
@@ -65,12 +66,12 @@ h1{
 }
 
 #session-user div a:visited{
-    color: black;
+    color: var(--black-color);
 }
 
 #session-user div a:hover{
-    background-color: rgb(21, 21, 21);
-    color: white;
+    background-color: var(--black-color);
+    color: var(--white-color);
 }
 
 #session-user figure{
@@ -120,7 +121,7 @@ h1{
 #widgets-below #users-accounts article:first-of-type,
 #widgets-below #users-accounts article:hover,
 #computer-actions i:hover{
-    background-color: rgba(114, 114, 114, 0.44);
+    background-color: var(--hover-light-color);
 }
 
 #widgets-below #users-accounts figure img{
@@ -156,13 +157,13 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--white-color);
     margin-left: 4vw;
     margin-top: 3vh;
 }
 
 .desk-widgets:hover{
-    background-color: gray;
+    background-color: var(--hover-light-color);
 }
 
 #folder-icon{
@@ -177,7 +178,7 @@ h1{
                                 /******** PORTFOLIO FOLDER **********/
 
 #portfolio{
-    border: 1px solid rgba(255, 255, 255, 0.453);
+    border: 1px solid var(--outline);
     background-color: rgb(21, 21, 21);
     overflow: hidden;
     position: absolute;
@@ -201,7 +202,7 @@ h1{
 }
 
 #action-window{
-    color: white;
+    color: var(--white-color);
     position: absolute;
     top: 5px;
     right: 0;
@@ -216,7 +217,7 @@ h1{
 
 #action-window i:first-of-type:hover,
 #action-window i:nth-of-type(2):hover{
-    background-color: rgb(65, 65, 65);
+    background-color: var(--hover-light-color);
 }
 
 #close-window:hover{
@@ -224,7 +225,7 @@ h1{
 }
 
 #tab{
-    color: whitesmoke;
+    color: var(--white-color);
     justify-content: space-between;
     padding: 10px;
     width: 30%;
@@ -253,7 +254,7 @@ h1{
 }
 
 #tab-sub-menu{
-    color: white;
+    color: var(--white-color);
     height: 40px;
     gap: 0.6rem;
 }
@@ -314,7 +315,7 @@ h1{
 #intern-menu ul,
 #intern-menu ul li{
     display: flex;
-    color: white;
+    color: var(--white-color);
 }
 
 #intern-menu ul{
@@ -327,7 +328,7 @@ h1{
 }
 
 #intern-menu #new-list li:first-of-type{
-    border: 1px solid white;
+    border: 1px solid var(--white-color);
     border-radius: 50%;
     height: 1.2rem;
     width: 1.2rem;
@@ -377,7 +378,7 @@ h1{
 
 #window-main-content{
     display: flex;
-    color: white;
+    color: var(--white-color);
 }
 
 .blue-color{
@@ -450,11 +451,11 @@ h1{
 
 #scrollable-table a{
     text-decoration: none;
-    color: white;
+    color: var(--white-color);
 }
 
 #scrollable-table a:visited{
-    color: white;
+    color: var(--white-color);
 }
 
 
@@ -466,8 +467,8 @@ h1{
     bottom: 0;
     width: 100vw;
     height: 6vh;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.226);
+    color: var(--white-color);
+    border: 1px solid var(--outline);
     justify-content: space-between;
     padding: 0 1.5rem;
 }
@@ -488,14 +489,14 @@ h1{
 #bottom-menu-bar #center-widgets input{
     height: 4vh;
     background-color: rgb(78, 78, 78);
-    color: white;
+    color: var(--white-color);
     border: none;
     border-radius: 50px;
     width: 20vw;
 }
 
 #bottom-menu-bar #center-widgets input::placeholder{
-    color: rgb(224, 221, 221);
+    color: var(--light-input);
     padding-left: 30px;
 }
 
@@ -549,7 +550,7 @@ h1{
 #bottom-menu-bar #center-widgets a:hover,
 #bottom-menu-bar li:hover,
 #bottom-menu-bar #date-hour:hover{
-    background-color: gray;
+    background-color: var(--hover-light-color);
 }
 
 #date-hour{
