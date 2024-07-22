@@ -553,6 +553,10 @@ li{
     background-color: var(--hover-light-color);
 }
 
+#bottom-menu-bar li:nth-of-type(5){
+    padding: inherit;
+}
+
 #date-hour{
     text-align: end;
 }
