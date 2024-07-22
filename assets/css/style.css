@@ -15,6 +15,11 @@ li{
     list-style-type: none;
 }
 
+h1{
+    font-size: 1rem;
+    font-weight: normal;
+}
+
                 /************  SESSION PAGE  **************/
 
 #container-session-page{
@@ -192,6 +197,7 @@ li{
     height: 94vh;
     bottom: 0;
     left: 0;
+    top: 0;
 }
 
 #action-window{
@@ -485,11 +491,26 @@ li{
     color: white;
     border: none;
     border-radius: 50px;
+    width: 20vw;
 }
 
 #bottom-menu-bar #center-widgets input::placeholder{
     color: rgb(224, 221, 221);
     padding-left: 30px;
+}
+
+.img-folder-undisplayed{
+    display: none;
+}
+
+#figure-folder-img{
+    height: 5.4vh;
+    display: flex;
+    align-items: center;
+}
+
+#folder-img{
+    height: 80%;
 }
 
 #bottom-menu-bar #center-widgets i{
@@ -507,16 +528,24 @@ li{
     left: 10px;
 }
 
+#bottom-menu-bar #date-hour,
+#bottom-menu-bar #center-widgets a{
+    padding: 1px;
+    border-radius: 5px;
+}
+
 #bottom-menu-bar span:first-of-type,
 #bottom-menu-bar i,
 #bottom-menu-bar li,
-#bottom-menu-bar #date-hour{
+#bottom-menu-bar #center-widgets #figure-folder-img,
+#bottom-menu-bar #center-widgets .fa-windows{
     padding: 5px;
     border-radius: 5px;
 }
 
 #bottom-menu-bar #weather:hover,
 #bottom-menu-bar #center-widgets .fa-windows:hover,
+#bottom-menu-bar #center-widgets #figure-folder-img:hover ,
 #bottom-menu-bar #center-widgets a:hover,
 #bottom-menu-bar li:hover,
 #bottom-menu-bar #date-hour:hover{
@@ -551,6 +580,7 @@ embed{
         height: 100vh;
         bottom: 0;
         left: 0;
+        top: 0;
     }
 
     .window-main-content-mini{
@@ -576,6 +606,7 @@ embed{
         height: 100vh;
         bottom: 0;
         left: 0;
+        top: 0;
     }
 
     .window-main-content-mini{
@@ -598,6 +629,10 @@ embed{
         height: 7vh;
     }
 
+    #figure-folder-img{
+        height: 6.4vh;
+    }
+    
     #bottom-menu-bar #center-widgets input{
         height: 5vh;
         padding-top: 0.3rem;
@@ -640,6 +675,7 @@ embed{
         height: 100vh;
         bottom: 0;
         left: 0;
+        top: 0;
     }
 
     .window-main-content-mini{
@@ -660,6 +696,10 @@ embed{
 
     #bottom-menu-bar{
         height: 8vh;
+    }
+
+    #figure-folder-img{
+        height: 5.8vh;
     }
 
     #bottom-menu-bar #center-widgets input{
