@@ -1,31 +1,47 @@
 function displayPortfolio(){
 
+    let extend = document.querySelector("#extend"); 
+    let windowContent = document.querySelector("#window-main-content");  
+    let reduce = document.querySelector("#reduce"); 
+    let folderImg = document.querySelector("#folder-img"); 
     let folder = document.querySelector("#portfolio-folder")
     let portfolio = document.querySelector("#portfolio")    
     folder.addEventListener("dblclick", (e) => {
         portfolio.style.display = "block"        
-
-        let extend = document.querySelector("#extend"); 
-        let windowContent = document.querySelector("#window-main-content");  
-    
-        extend.addEventListener("click", (e) => {
-            console.log(portfolio)   
-            portfolio.classList.toggle("extend")  
-            if(portfolio.classList == "extend"){
-                portfolio.classList.remove("mini")  
+        folderImg.classList.remove("img-folder-undisplayed")
+        // When the portfolio's window is expanded
+        extend.addEventListener("click", (e) => {  
+            if(!portfolio.classList.contains("extend")){
+                previousTop = portfolio.style.top;
+                previousLeft = portfolio.style.left;
+                portfolio.classList.add("extend")
+                portfolio.classList.remove("mini")
+                portfolio.style.top ="0px"
+                portfolio.style.left = "0px"
                 windowContent.classList.remove("window-main-content-mini")              
             }else{
+                portfolio.style.top = previousTop;
+                portfolio.style.left = previousLeft;
+                portfolio.classList.remove("extend")
                 portfolio.classList.add("mini") 
                 windowContent.classList.add("window-main-content-extend")
             }
         }); 
 
+        // When the portfolio's window is reduced
+        reduce.addEventListener("click", (e) => {
+            portfolio.style.display = "none"
+            folderImg.addEventListener("click", (e) => {
+                portfolio.style.display = "block"
+            });
+        }); 
+
         let closeWindow = document.querySelector("#close-window")
         closeWindow.addEventListener("click", (e) => {
             portfolio.style.display ="none"
+            folderImg.classList.add("img-folder-undisplayed")
+
         });  
-        
- 
     });    
 }
 displayPortfolio();
@@ -58,19 +74,40 @@ function displayCurrentDate(){
 
 displayCurrentDate()
 
-// function extendWindow(previousHeight, previousWidth){
-//     let extend = document.querySelector("#extend");
-//     let portfolio = document.querySelector("#portfolio")    
+setInterval(displayCurrentDate, 5000);
 
-//     extend.addEventListener("click", (e) => {
+function moveWindow(){
 
-//         console.log(previousHeight)        
-//         portfolio.style.height="100vh";
-//         portfolio.style.width="100vw";
-//         portfolio.style.bottom="0px";
-//         portfolio.style.left="0px";
+    let portfolio = document.querySelector("#portfolio")    
+    let isDown;
+    let offset;
 
+    document.addEventListener('mouseup', (e) => {
+        isDown = false;
+    });
+    
+    portfolio.addEventListener('mousedown', (e) => {
+        isDown = true;
+        offset = [
+            portfolio.offsetLeft - e.clientX,
+            portfolio.offsetTop - e.clientY
+        ];
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (isDown) {
+            mousePosition = {
+    
+                x: e.clientX,
+                y: e.clientY
+    
+            };
+            portfolio.style.left = (mousePosition.x + offset[0]) + 'px';
+            portfolio.style.top = (mousePosition.y + offset[1]) + 'px';
+        }
+    });
 
-//     });   
-// }
-// extendWindow();
+}
+
+moveWindow();
+
