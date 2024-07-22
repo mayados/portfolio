@@ -19,12 +19,15 @@ function displayPortfolio(){
                 portfolio.style.top ="0px"
                 portfolio.style.left = "0px"
                 windowContent.classList.remove("window-main-content-mini")              
+                windowContent.classList.add("window-main-content-extend")              
             }else{
                 portfolio.style.top = previousTop;
                 portfolio.style.left = previousLeft;
                 portfolio.classList.remove("extend")
                 portfolio.classList.add("mini") 
-                windowContent.classList.add("window-main-content-extend")
+                windowContent.classList.add("window-main-content-mini")
+                windowContent.classList.remove("window-main-content-extend")              
+
             }
         }); 
 
